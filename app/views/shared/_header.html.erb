@@ -1,13 +1,23 @@
 <header class="bg-black fixed top-0 left-0 w-full z-10">
   <div class="flex items-center justify-between h-16">
-    <div class="flex items-center">
-      <a href="/" class="text-white text-2xl font-bold ml-4">シーシャ検索サイト</a>
+    <div class="flex ml-2 items-center">
+      <%= image_tag("sample.png", alt: "ロゴ", class: "h-10") %>
+      <a href="/" class="text-white text-2xl ml-4">シーシャ検索サイト</a>
     </div>
+    <!-- ransack検索フォーム -->
     <div class="flex-grow">
-      <input type="text" data-controller="autocomplete" data-autocomplete-url-value="/search/autocomplete" placeholder="フリー検索" class="ml-4 w-100 h-10 px-4 bg-white text-black rounded-full">
+      <input type="text" data-controller="autocomplete" data-autocomplete-url-value="/search/autocomplete" placeholder="キーワード検索" class="ml-4 w-100 h-10 px-4 bg-white text-black rounded-full">
     </div>
     <!-- Tailwind CSSを使用したハンバーガーメニューアイコンの追加 -->
     <div class="flex ml-auto">
+      <nav>
+        <ul class="flex space-x-4 text-white">
+          <li><%= link_to 'ホーム' %></li>
+          <li><%= link_to '新規登録' %></li>
+          <li><%= link_to 'ログイン' %></li>
+        </ul>
+      </nav>
+
       <button id="menu-toggle" class="text-white ml-4 mr-4 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16m-7 6h7"></path>
