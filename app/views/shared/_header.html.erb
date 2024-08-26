@@ -9,7 +9,7 @@
       <%= search_form_for @q, url: shops_path, local: true, class: 'd-flex mx-auto my-2 my-lg-0 position-relative' do |f| %>
         <div data-controller="autocomplete" data-autocomplete-url-value="/shops/autocomplete" role="combobox">
           <div class="input-group">
-            <%= f.search_field :title_cont, data: { autocomplete_target: 'input' }, placeholder: "店舗名で検索", class: "ml-4 w-100 h-10 px-4 bg-white text-black rounded-full" %>
+            <%= f.search_field :title_or_description_or_area_or_budget_or_scene_cont, data: { autocomplete_target: 'input' }, placeholder: "店舗名で検索", class: "ml-4 w-100 h-10 px-4 bg-white text-black rounded-full" %>
           </div>
         </div>
       <% end %>
