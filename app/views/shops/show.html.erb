@@ -17,54 +17,57 @@
         <p><%= @shop.title %></p>
       </div>
 
-    <hr class="col-span-full my-2">
+      <hr class="col-span-full my-2">
 
       <div>
-        <p class="mb-2">ジャンル</p>
+        <p class="mb-2">利用用途</p>
         <p><%= @shop.scene %></p>
       </div>
 
       <hr class="col-span-full my-2">
+
       <div>
         <p class="mb-2">予算</p>
-        <p><%= @shop.budget %>~</p>
+        <p><%= @shop.budget %>円</p>
         <p>詳細記載予定</p>
       </div>
 
-        <hr class="col-span-full my-2">
-        <div>
-          <%# <i class="fas fa-phone text-gray-500 mr-2"></i> %>
-          <p class="mb-2">お問い合わせ</p>
-          <p><%= @shop.shop_number %>03-0000-0000</p>
-          <%# <p class="text-sm text-gray-500 mt-1">※電話予約の場合は</p> %>
-        </div>
+      <hr class="col-span-full my-2">
 
-        <hr class="col-span-full my-2">
+      <div>
+        <%# <i class="fas fa-phone text-gray-500 mr-2"></i> %>
+        <p class="mb-2">電話番号</p>
+        <p><%= @shop.shop_number %></p>
+        <%# <p class="text-sm text-gray-500 mt-1">※電話予約の場合は</p> %>
+      </div>
 
-        <div>
-          <p class="mb-2">最寄り駅</p>
-          <p><%= @shop.area %></p>
-        </div>
+      <hr class="col-span-full my-2">
 
-        <hr class="my-2">
-        <div>
-          <p class="mb-2">営業時間</p>
-          <p><%= @shop.opening_hours %></p>
-        </div>
+      <div>
+        <p class="mb-2">エリア</p>
+        <p><%= @shop.area %></p>
+      </div>
 
-        <hr class="col-span-full my-2">
+      <hr class="col-span-full my-2">
 
-        <div>
-          <p class="mb-2">アクセス</p>
-          <p>GoogleMap予定</p>
-        </div>
+      <div>
+        <p class="mb-2">営業時間</p>
+        <p><%= @shop.opening_hours %></p>
+      </div>
 
-        <hr class="col-span-full my-2">
+      <hr class="col-span-full my-2">
 
-        <div>
-          <p class="mb-2">タグ</p>
-          <p>タグ付け予定</p>
-        </div>
+      <div>
+        <p class="mb-2">アクセス</p>
+        <p>GoogleMap予定</p>
+      </div>
+
+      <hr class="col-span-full my-2">
+
+      <div>
+        <p class="mb-2">タグ</p>
+        <p>タグ付け予定</p>
+      </div>
 
         <%# <hr class="col-span-full my-2"> %>
     </div>

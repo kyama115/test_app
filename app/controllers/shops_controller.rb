@@ -1,7 +1,15 @@
 class ShopsController < ApplicationController
   def index
     @q = Shop.ransack(params[:q])
-    @shops = @q.result(distinct: true).order(created_at: :desc)
+    if params[:budget_range]
+      @shops = Shop.budget_range(params[:budget_range])
+    elsif params[:area]
+      @shops = Shop.by_area(params[:area])
+    elsif params[:scene]
+      @shops = Shop.by_scene(params[:scene])
+    else
+      @shops = @q.result(distinct: true).order(created_at: :desc)
+    end
   end
 
   def show
