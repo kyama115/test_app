@@ -1,56 +1,72 @@
-<div class="container mx-auto bg-gray-100 p-8">
+<div class="container mx-auto bg-gray-100 p-12 px-36">
   <div class="relative flex justify-center items-center">
-    <%= image_tag("shisha.jpg", class: "w-960 h-480 object-cover") %>
+    <%= image_tag("shisha.jpg", class: "w-960 h-480 object-cover rounded-xl") %>
     <div class="absolute inset-0 bg-opacity-50 flex flex-col justify-center items-center text-white">
     </div>
   </div>
 
-  <div class="container pt-5">
-  <div class="row mb-3">
-    <div class="col-lg-8 offset-lg-2">
-      <h1><%= @shop.title %></h1>
-      <!-- 掲示板内容 -->
-      <article class="card">
-        <div class="card-body">
-          <div class='row'>
-            <div class='col-md-3'>
-              <% if @shop.shop_image.present? %>
-                <%= image_tag @shop.shop_image, class: "card-img-top img-fluid", width: "300", height: "200" %>
-              <% end %>
-            </div>
-            <div class='col-md-9'>
-              <h3 style='display: inline;'><%= @shop.title %></h3>
-              <ul class="list-inline">
-              </ul>
-              <div class='d-flex justify-content-end'>
-                <%= link_to "#", id: "button-edit-#{@shop.id}" do %>
-                  <i class='bi bi-pencil-fill'></i>
-                <% end %>
-                <%= link_to "#", class: "ms-2", id: "button-delete-#{@shop.id}" do %>
-                  <i class="bi bi-trash-fill"></i>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <p><%= simple_format(@shop.description) %></p>
-        </div>
-      </article>
-    </div>
-  </div>
-</div>
+<!-- app/views/shops/show.html.erb -->
 
-  <%# <!-- コメントフォーム -->
-  <%= render "comments/form", comment: @comment, shop: @shop %>
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl mb-6 pt-7">店舗情報</h1>
 
-   <!-- コメントエリア -->
-   <%# <div class="row"> %>
-      <%# <div class="col-lg-8 offset-lg-2"> %>
-        <%# <table class="table"> %>
-          <%# <tbody id="table-comment"> %>
-            <%# <%= render @comments %>
-          <%# </tbody>
-        </table>
+  <div class="bg-white shadow-md rounded-xl p-6">
+    <div class="items-center mb-4 grid grid-cols-1 gap-6">
+      <div>
+        <p class="mb-2">店舗名</p>
+        <p><%= @shop.title %></p>
       </div>
+
+    <hr class="col-span-full my-2">
+
+      <div>
+        <p class="mb-2">ジャンル</p>
+        <p><%= @shop.scene %></p>
+      </div>
+
+      <hr class="col-span-full my-2">
+      <div>
+        <p class="mb-2">予算</p>
+        <p><%= @shop.budget %>~</p>
+        <p>詳細記載予定</p>
+      </div>
+
+        <hr class="col-span-full my-2">
+        <div>
+          <%# <i class="fas fa-phone text-gray-500 mr-2"></i> %>
+          <p class="mb-2">お問い合わせ</p>
+          <p><%= @shop.shop_number %>03-0000-0000</p>
+          <%# <p class="text-sm text-gray-500 mt-1">※電話予約の場合は</p> %>
+        </div>
+
+        <hr class="col-span-full my-2">
+
+        <div>
+          <p class="mb-2">最寄り駅</p>
+          <p><%= @shop.area %></p>
+        </div>
+
+        <hr class="my-2">
+        <div>
+          <p class="mb-2">営業時間</p>
+          <p><%= @shop.opening_hours %></p>
+        </div>
+
+        <hr class="col-span-full my-2">
+
+        <div>
+          <p class="mb-2">アクセス</p>
+          <p>GoogleMap予定</p>
+        </div>
+
+        <hr class="col-span-full my-2">
+
+        <div>
+          <p class="mb-2">タグ</p>
+          <p>タグ付け予定</p>
+        </div>
+
+        <%# <hr class="col-span-full my-2"> %>
     </div>
   </div>
 </div>
